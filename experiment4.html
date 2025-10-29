@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Room Booking Form</title>
+</head>
+<body>
+  <center>
+    <h1>Hotel Room Booking Form</h1>
+    <form action="response.html" name="room_booking" target="_blank" method="get">
+
+      
+      <label for="name">Full Name: </label>
+      <input type="text" name="name" id="name" required placeholder="Enter your full name">
+      <br><br>
+
+      <label for="email">Email: </label>
+      <input type="email" name="email" id="email" required placeholder="Enter your email">
+      <br><br>
+
+      <label for="phone">Phone: </label>
+      <input 
+        type="tel" 
+        name="phone" 
+        id="phone" 
+        maxlength="10" 
+        pattern="[0-9]{10}" 
+        placeholder="Enter 10-digit number" 
+        required
+      >
+      <br><br>
+
+      <label for="checkin">Check-in Date: </label>
+      <input type="date" name="checkin" id="checkin" required>
+      <br><br>
+
+      <label for="checkout">Check-out Date: </label>
+      <input type="date" name="checkout" id="checkout" required>
+      <br><br>
+
+      <label for="select">Room Type: </label>
+      <select name="room" id="select">
+        <option value="single">Single Room</option>
+        <option value="double">Double Room</option>
+      </select>
+      <br><br>
+
+      <label for="guests">Number of Guests: </label>
+      <input 
+        type="number" 
+        name="guests" 
+        id="guests" 
+        min="1" 
+        step="1" 
+        placeholder="Enter number of guests" 
+        required
+      >
+      <br><br>
+
+      <label for="requests">Special Requests: </label>
+      <br>
+      <textarea 
+        name="requests" 
+        id="requests" 
+        rows="3" 
+        cols="30" 
+        placeholder="Any additional requests">
+      </textarea>
+      <br><br>
+
+      <input type="submit" value="Book Now">
+      <input type="reset" value="Reset Form">
+
+    </form>
+  </center>
+
+  <script>
+    const phoneInput = document.getElementById("phone");
+    phoneInput.addEventListener("input", () => {
+      if (phoneInput.value.length > 10) {
+        phoneInput.value = phoneInput.value.slice(0, 10);
+      }
+    });
+  </script>
+</body>
+</html>
